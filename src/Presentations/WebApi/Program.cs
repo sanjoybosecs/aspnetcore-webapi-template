@@ -61,7 +61,9 @@ namespace WebApi
                     await DefaultRoles.SeedAsync(roleManager);
                     await DefaultSuperAdmin.SeedAsync(userManager);
                 }
-                catch { }
+                catch (Exception ex) {
+                    Console.WriteLine(ex.Message);
+                }
                 finally { }
             }
             try
